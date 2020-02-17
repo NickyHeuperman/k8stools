@@ -4,6 +4,6 @@ RUN wget -O /yq https://github.com/mikefarah/yq/releases/download/$YQ_VERSION/yq
     chmod +x /yq
 
 FROM scratch
-COPY --from=builder /kubectl /kubectl
+COPY --from=builder /usr/local/bin/kubectl /kubectl
 COPY --from=builder /yq /yq
 ENTRYPOINT ["/kubectl"]
