@@ -7,4 +7,4 @@ FROM alpine:3.11
 COPY --from=builder /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=builder /yq /usr/local/bin/yq
 COPY --from=helm /usr/bin/helm /usr/local/bin/helm
-
+ENTRYPOINT ["/bin/sh -c"]
